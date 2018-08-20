@@ -1,0 +1,31 @@
+1、TreeSet集合中有Comparator接口，因为接口是不能实例化的，所以要找接口下的子类(compare),重写子类里的方法，使其具有比较器的功能
+
+与上面的Comparable接口不同的是：
+
+①、Comparator位于包java.util下，而Comparable位于包java.lang下。
+
+②、Comparable接口将比较代码嵌入需要进行比较的类的自身代码中，而Comparator接口在一个独立的类中实现比较。
+
+③、如果前期类的设计没有考虑到类的Compare问题而没有实现Comparable接口，后期可以通过Comparator接口来实现比较算法进行排序，并且为了使用不同的排序标准做准备，比如：升序、降序。
+
+④、Comparable接口强制进行自然排序，而Comparator接口不强制进行自然排序，可以指定排序顺序。
+
+
+
+
+2、在treeSet与treeMap集合中：
+	两种比较方法：
+		一是treeSet集合中的add()方法以及treeMap里的put()方法会把存入的对象提升为Comparable类型,comparable里有compareTo方法,重写compareTo方法
+		而是引进比较器方法,在comparator中重写compare方法
+3、在双列集合中，双列集合不能被直接遍历
+4、面试题
+	 * HashMap和HashTable的区别
+	 * 共同点:
+	 * 底层都是哈希算法,都是双列集合
+	 * 区别:
+	 * 1,HashMap是线程不安全的,效率高,JDK1.2版本
+	 *   HashTable是线程安全的,效率低,JDK1.0版本的
+	 * 2,HashMap可以存储null键和null值
+	 *   HashTable不可以存储null键和null值
+5、当一个类中所有方法都是静态的，会私有它的构造方法，目的是不让其他类来创建本类对象，直接类名.调用就可以了
+		

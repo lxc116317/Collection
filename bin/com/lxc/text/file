@@ -1,0 +1,17 @@
+1、TreeSet集合中有Comparator接口，因为接口是不能实例化的，所以要找接口下的子类(compare),重写子类里的方法，使其具有比较器的功能
+2、在treeSet与treeMap集合中：
+	两种比较方法：
+		一是treeSet集合中的add()方法以及treeMap里的put()方法会把存入的对象提升为Comparable类型,comparable里有compareTo方法,重写compareTo方法
+		而是引进比较器方法,在comparator中重写compare方法
+3、在双列集合中，双列集合不能被直接遍历
+4、面试题
+	 * HashMap和HashTable的区别
+	 * 共同点:
+	 * 底层都是哈希算法,都是双列集合
+	 * 区别:
+	 * 1,HashMap是线程不安全的,效率高,JDK1.2版本
+	 *   HashTable是线程安全的,效率低,JDK1.0版本的
+	 * 2,HashMap可以存储null键和null值
+	 *   HashTable不可以存储null键和null值
+5、当一个类中所有方法都是静态的，会私有它的构造方法，目的是不让其他类来创建本类对象，直接类名.调用就可以了
+		
